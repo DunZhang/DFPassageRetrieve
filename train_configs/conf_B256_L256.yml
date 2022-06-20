@@ -1,0 +1,17 @@
+batch_size: 256
+data_dir: ./data # 原始数据目录，需要解压好
+device: '3'
+eval_metrics:
+  - mrr100
+eval_step: 500 # 每1000步评估一次
+log_step: 20
+lr: 5.0e-05
+max_len: 256
+num_epoch: 25
+output_dir: ./output/B256_L256 # 输出目录
+pretrained_model_dir: ./output/pretrain_roformer_L-8_H-512_A-8/pt # 预训练模型目录
+print_input_step: 600
+save_times_per_epoch: -1
+score_ratio: 20.0 # 计算损失函数需要堆cosine值进行扩大
+seed: 2022
+warmup_proportion: 0.1
